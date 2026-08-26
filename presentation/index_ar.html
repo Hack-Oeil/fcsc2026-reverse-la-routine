@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head lang="ar">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // التحقق مما إذا كانت النافذة داخل إطار iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // تفعيل تلوين التعليمات البرمجية:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("لم يتم تحميل Highlight.js!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>التحدي #601</h3>
+                            <h2 class="section-title">La routine</h2>
+                            <p>
+♫ Comme d’habituuuuuuuuude ♫
+                            </p>
+                            <h4>ملف للدراسة:</h4>
+                            <p>../files/la-routine</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                الرابط الرسمي:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/reverse/fcsc2026-reverse-la-routine/">https://hackropole.fr/fr/challenges/reverse/fcsc2026-reverse-la-routine/</a>
+                                <br />
+                                المؤلف: ElyKar
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>التعلم</h3>
+                            <h2 class="section-title">الوثائق ومقاطع الفيديو</h2>
+                            <p class="section-subtitle">
+                                لا توجد وثائق في الوقت الحالي
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>المساعدة</h3>
+                            <h2 class="section-title">نصائح وتلميحات</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">موضوع على ديسكورد</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="الرجوع إلى أعلى الصفحة" title="الرجوع إلى أعلى الموقع"></a>
+    </div>
+</body>
+
+</html>
